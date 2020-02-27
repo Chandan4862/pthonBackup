@@ -1,0 +1,162 @@
+Hidden command,CLI mode
+show pluggable-optical-modules,exec
+pluggable-optical-module,con t
+no pluggable-optical-module,con t
+default pluggable-optical-module,con t
+show sys-info led,exec
+show sys-info fan,exec
+show sys-info power,exec
+show sys-info temperature,exec
+show sys power,exec
+sys power,con t
+no sys power,con t
+default sys power,con t
+show ip bfd,exec
+ip bfd,int gigabit ethernet
+no ip bfd,int gigabit ethernet
+default ip bfd,int gigabit ethernet
+ip route bfd,con t
+no ip route bfd,con t
+default ip route bfd,con t
+router bfd,con t
+no router bfd,con t
+default router bfd,con t
+ip bfd,int vlan
+no ip bfd,int vlan
+default ip bfd,int vlan
+show application restconf,exec
+restconf,application
+no restconf,application
+default restconf,application
+show ovsdb,exec
+ovsdb,con t
+show virtual-service,exec
+virtual-service,exec
+virtual-service,con t
+no virtual-service,con t
+default virtual-service,con t
+filter acl ace ip 1 1 ip-options any,con t
+filter acl ace ip 1 1 dscp mask phbcs4 0x18,con t
+filter acl ace ethernet 1 1 vlan-tag-prio mask 3 0x3,con t
+no filter acl ace ip 1 1 ip-options,con t
+show qos rate-limiting,exec
+show qos shaper,exec
+qos if-rate-limiting,int gigabit ethernet
+no qos if-rate-limiting,int gigabit ethernet
+default qos if-rate-limiting,int gigabit ethernet
+qos if-shaper,int gigabit ethernet
+no qos if-shaper,int gigabit ethernet
+default qos if-shaper,int gigabit ethernet
+show interfaces gigabitEthernet rate-limit,exec
+rate-limit,int gigabit ethernet
+no rate-limit,int gigabit ethernet
+default rate-limit,int gigabit ethernet
+show ipv6 ,exec
+ipv6,int gigabit ethernet
+no ipv6 ,int gigabit ethernet
+default ipv6,int gigabit ethernet
+ipv6,con t
+no ipv6 ,con t
+default ipv6,con t
+ipv6,router vrf
+no ipv6 ,router vrf
+default ipv6,router vrf
+ipv6,router isis
+no ipv6 ,router isis
+default ipv6,router isis
+ipv6-source-address,router isis
+no ipv6-source-address,router isis
+ipv6,router vrf
+no ipv6,router vrf
+default ipv6,router vrf
+filter acl ace ipv6,con t
+no filter acl ace ipv6,con t
+default filter acl ace ipv6,con t
+|filter acl <1-2048> type {inVlan || inPort || outPort || inVsn}
+ [matchType {both || terminatingNNIOnly || uniOnly}]
+ [name WORD<1-32>] pktType ipv6|,con t
+hash-calc getmltindex traffic-type ipv6,con t
+router rip ipv6-enable,con t
+no router rip ipv6-enable,con t
+default router rip ipv6-enable,con t
+ip vrf WORD<1-16> ipv6-max-routes,con t
+default ip vrf WORD<1-16> ipv6-max-routes,con t
+ip vrf WORD<1-16> ipv6-max-routes-trap,con t
+no ip vrf WORD<1-16> ipv6-max-routes-trap,con t
+default ip vrf WORD<1-16> ipv6-max-routes-trap,con t
+router ospf ipv6-enable,con t
+no router ospf ipv6-enable,con t
+default router ospf ipv6-enable,con t
+|vlan create <2-4059> [name WORD<0-64>] type
+ protocol-mstprstp <0-63> ipv6 [color <0-32>]|,con t
+show ip vrf ipv6-max-routes,exec
+show isis lsdb ipv6-unicast,exec
+show isis spbm ipv6-unicast-fib,exec
+ipv6,loopback
+no ipv6,loopback
+default ipv6,loopback
+|ip ospf apply redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,loopback
+|ip rip apply redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,loopback
+show mgmt ipv6,priv exec
+show filter acl ipv6,priv exec
+default-information ipv6-originate,router bgp
+no default-information ipv6-originate,router bgp
+neighbor WORD<0-1536> address-family ipv6,router bgp
+no neighbor WORD<0-1536> address-family ipv6,router bgp
+default neighbor WORD<0-1536> address-family ipv6,router bgp
+neighbor WORD<0-1536> default-ipv6-originate,router bgp
+no neighbor WORD<0-1536> default-ipv6-originate,router bgp
+default neighbor WORD<0-1536> default-ipv6-originate,router bgp
+neighbor WORD<0-1536> ipv6-in-route-map,router bgp
+no neighbor WORD<0-1536> ipv6-in-route-map,router bgp
+default neighbor WORD<0-1536> ipv6-in-route-map,router bgp
+neighbor WORD<0-1536> ipv6-max-prefix,router bgp
+default neighbor WORD<0-1536> ipv6-max-prefix,router bgp
+neighbor WORD<0-1536> ipv6-out-route-map,router bgp
+no neighbor WORD<0-1536> ipv6-out-route-map,router bgp
+default neighbor WORD<0-1536> ipv6-out-route-map,router bgp
+redistribute ipv6-direct,router bgp
+no redistribute ipv6-direct,router bgp
+default redistribute ipv6-direct,router bgp
+redistribute ipv6-isis,router bgp
+no redistribute ipv6-isis,router bgp
+default redistribute ipv6-isis,router bgp
+redistribute ipv6-static,router bgp
+no redistribute ipv6-static,router bgp
+default redistribute ipv6-static,router bgp
+spbm <1-100> ipv6 enable,router isis
+no spbm <1-100> ipv6 enable,router isis
+default spbm <1-100> ipv6 enable,router isis
+ip bgp default-information ipv6-originate,router vrf
+no ip bgp default-information ipv6-originate,router vrf
+default ip bgp default-information ipv6-originate,router vrf
+ip bgp neighbor WORD<0-1536> default-ipv6-originate,router vrf
+no ip bgp neighbor WORD<0-1536> default-ipv6-originate,router vrf
+default ip bgp neighbor WORD<0-1536> default-ipv6-originate,router vrf
+ip bgp neighbor WORD<0-1536> ipv6-in-route-map,router vrf
+no ip bgp neighbor WORD<0-1536> ipv6-in-route-map,router vrf
+default ip bgp neighbor WORD<0-1536> ipv6-in-route-map,router vrf
+ip bgp neighbor WORD<0-1536> ipv6-max-prefix,router vrf
+no ip bgp neighbor WORD<0-1536> ipv6-max-prefix,router vrf
+default ip bgp neighbor WORD<0-1536> ipv6-max-prefix,router vrf
+ip bgp neighbor WORD<0-1536> ipv6-out-route-map,router vrf
+no ip bgp neighbor WORD<0-1536> ipv6-out-route-map,router vrf
+default ip bgp neighbor WORD<0-1536> ipv6-out-route-map,router vrf
+|ip bgp redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|no ip bgp redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|default ip bgp redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|ip ospf redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|no ip ospf redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|default ip ospf redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|ip rip redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|no ip rip redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+|default ip rip redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router vrf
+ipv6,router vrrp
+no ipv6,router vrrp
+default ipv6,router vrrp
+|redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router ospf
+|no redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router ospf
+|default redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router ospf
+|redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router rip
+|no redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router rip
+|default redistribute {ipv6-direct || ipv6-isis || ipv6-static}|,router rip

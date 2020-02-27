@@ -1,0 +1,1 @@
+# Create an array of 10 random numbers from a standard normal distribution

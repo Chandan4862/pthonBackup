@@ -1,0 +1,20 @@
+Learner,SessionCompletion,UniqueDays,District,Course Completed
+Learner1,50,31,Mumbai Suburban,Yes
+Learner2,50,30,Yavatmal,Yes
+Learner3,50,31,Mumbai Suburban,Yes
+Learner4,50,33,Mumbai Suburban,Yes
+Learner5,49,33,Yavatmal,Yes
+Learner6,50,31,Mumbai Suburban,Yes
+Learner7,50,33,Yavatmal,Yes
+Learner8,,32,Jalgaon,Yes
+Learner9,,29,Yavatmal,Yes
+Learner10,50,28,Jalgaon,No
+Learner11,50,29,Mumbai Suburban,Yes
+Learner12,50,32,Yavatmal,Yes
+Learner13,50,34,Mumbai Suburban,Yes
+Learner14,50,37,Yavatmal,Yes
+Learner15,50,,Jalgaon,Yes
+Learner16,50,,Mumbai Suburban,No
+Learner17,50,,Mumbai Suburban,Yes
+Learner18,50,29,Yavatmal,Yes
+Learner19,50,32,Jalgaon,Yes
